@@ -14,7 +14,7 @@ pipeline {
       }
       post {
         success {
-          archiveArtifacts artifacts: 'AxisAssetState.jar', fingerprint: true
+          archiveArtifacts artifacts: 'dist/*.jar', fingerprint: true
         }
       }
     }
