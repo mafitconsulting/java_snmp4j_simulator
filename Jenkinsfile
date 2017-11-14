@@ -14,7 +14,7 @@ pipeline {
       }
       post {
         success {
-          archiveArtifacts artifacts: 'dist/*.jar'', fingerprint: true
+          archiveArtifacts artifacts: 'AxisAssetState.jar', fingerprint: true
         }
       }
     }
@@ -57,7 +57,7 @@ pipeline {
       }
       steps {
          sh "if [ ! -d '/var/www/html/AxisAssetState/all/${env.BRANCH_NAME}' ];then mkdir -p /var/www/html/AxisAssetState/all/${env.BRANCH_NAME};fi"
-         sh "cp dist/AxisAssetState_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar /var/www/html/AxisAssetState/all/${env.BRANCH_NAME}/" 
+         sh "cp AxisAssetState_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar /var/www/html/AxisAssetState/all/${env.BRANCH_NAME}/" 
       }
     }
 
