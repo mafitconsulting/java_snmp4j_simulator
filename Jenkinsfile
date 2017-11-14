@@ -51,6 +51,16 @@ pipeline {
         }
       }
     }
+    stage('Archive Artifact') {
+      when {
+        branch 'master'
+      }
+      steps {
+         sh "if [ ! -d '/var/www/html/AxisAssetState/all/${env.BRANCH_NAME}' ];then mkdir -p /var/www/html/AxisAssetState/all/${env.BRANCH_NAME};fi"
+         sh "cp dist/AxisAssetState_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar /var/www/html/AxisAssetState/all/${env.BRANCH_NAME}/" 
+      }
+    }
+
     stage('Tagging the Release') {
       when {
         branch 'master'
