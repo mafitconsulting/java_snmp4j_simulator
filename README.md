@@ -3,7 +3,7 @@ Java swing application for windows desktop. The application connects to a back-e
 retrieves CI data from custom table (viewAxisTable) which had been populated from an AXIS CMDB feed. 
 Searches on ci name. Retrieves HW_STATUS and V_STATUS 
 
-## Getting Started ok
+## Getting Started
 
 To clone this repository:     
 
